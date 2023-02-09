@@ -1,7 +1,10 @@
 import express from 'express'
+import { mongooseConnect } from './database/mongoose'
 
-const server = express()
 const PORT = process.env.PORT || 3333
+const server = express()
+
+mongooseConnect()
 
 server.get('/', (req, res) => {
   res.send('Hello World')
